@@ -8,8 +8,8 @@
 *.log
 
 # 빌드 디렉토리 무시
-/build
-/cmake-build-debug
+build/
+cmake-build-debug/
 
 # 임시 파일 무시
 *.tmp
