@@ -1,0 +1,19 @@
+# .gitignore 파일
+
+# 확장자가 .o 또는 .a인 파일 무시
+*.o
+*.a
+
+# log 파일 무시
+*.log
+
+# 빌드 디렉토리 무시
+/build
+/cmake-build-debug
+
+# 임시 파일 무시
+*.tmp
+*~
+
+# .DS_Store 파일 무시 (MacOS)
+.DS_Store

@@ -7,13 +7,13 @@
 #include <cppcms/http_response.h>
 #include <iostream>
 
-class hello_world : public cppcms::application {
+class hello_world_test : public cppcms::application {
 public:
-    hello_world(cppcms::service &srv) : cppcms::application(srv) { }
+    hello_world_test(cppcms::service &srv) : cppcms::application(srv) { }
     virtual void main(std::string url);
 };
 
-void hello_world::main(std::string /*url*/)
+void hello_world_test ::main(std::string /*url*/)
 {
     response().out() << "Hello, World!";
 }
@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
     try {
         cppcms::service srv(argc, argv);
         srv.applications_pool().mount(
-                cppcms::create_pool<hello_world>()
+                cppcms::create_pool<hello_world_test>()
         );
         srv.run();
     }
