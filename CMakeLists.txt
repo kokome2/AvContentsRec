@@ -20,7 +20,9 @@ endif()
 
 find_package(Boost REQUIRED COMPONENTS log)
 
-add_executable(run main.cpp)
+add_executable(run main.cpp
+        include/cppcms_sample_server.h
+        include/cppcms_sample_client.h)
 target_link_libraries(run
                         cppcms
                         booster
