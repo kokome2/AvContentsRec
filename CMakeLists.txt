@@ -36,8 +36,7 @@ add_executable(run
         ${SOURCE_FILES}
 
         main.cpp
-        include/cppcms_sample_server.h
-        include/cppcms_sample_client.h)
+        )
 
 target_link_libraries(run
                         cppcms
