@@ -17,3 +17,5 @@
 
 # .DS_Store 파일 무시 (MacOS)
 .DS_Store
+
+.idea
