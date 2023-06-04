@@ -20,9 +20,25 @@ endif()
 
 find_package(Boost REQUIRED COMPONENTS log)
 
-add_executable(run main.cpp
+set(HEADER_FILES
+        include/cppcms_sample_server.h
+        include/cppcms_sample_client.h
+        )
+
+set(SOURCE_FILES
+        main.cpp
+        src/server/cppcms_sample_server.cpp
+        src/client/cppcms_sample_client.cpp
+        )
+
+add_executable(run
+        ${HEADER_FILES}
+        ${SOURCE_FILES}
+
+        main.cpp
         include/cppcms_sample_server.h
         include/cppcms_sample_client.h)
+
 target_link_libraries(run
                         cppcms
                         booster
