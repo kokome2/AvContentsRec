@@ -7,6 +7,9 @@
 #include <cppcms/http_response.h>
 #include <iostream>
 
+#include <boost/log/trivial.hpp>
+
+
 class hello_world_test : public cppcms::application {
 public:
     hello_world_test(cppcms::service &srv) : cppcms::application(srv) { }
@@ -15,10 +18,19 @@ public:
 
 void hello_world_test ::main(std::string /*url*/)
 {
-    response().out() << "Hello, World!";
+    response().out() << "hello_world_test";
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char* argv[]) {
+
+//    boost log sample
+//    BOOST_LOG_TRIVIAL(trace) << "A trace severity message";
+//    BOOST_LOG_TRIVIAL(debug) << "A debug severity message";
+//    BOOST_LOG_TRIVIAL(info) << "An informational severity message";
+//    BOOST_LOG_TRIVIAL(warning) << "A warning severity message";
+//    BOOST_LOG_TRIVIAL(error) << "An error severity message";
+//    BOOST_LOG_TRIVIAL(fatal) << "A fatal severity message";
+
     try {
         cppcms::service srv(argc, argv);
         srv.applications_pool().mount(
