@@ -8,8 +8,9 @@ class Content {
 public:
     std::string title;
     std::vector<std::string> tags;
+    std::string actor; // 배우 정보를 추가
 
-    Content(std::string t, std::vector<std::string> tg) : title(t), tags(tg) {}
+    Content(std::string t, std::vector<std::string> tg, std::string a) : title(t), tags(tg), actor(a) {}
 };
 
 class User {
@@ -57,9 +58,9 @@ public:
 
 int main() {
     std::vector<Content> contents = {
-        Content("Movie A", {"action", "comedy"}),
-        Content("Movie B", {"drama", "romance"}),
-        Content("Movie C", {"action", "thriller"})
+        Content("Movie A", {"action", "comedy"}, "Actor X"),
+        Content("Movie B", {"drama", "romance"}, "Actor Y"),
+        Content("Movie C", {"action", "thriller"}, "Actor Z")
     };
 
     User user;
@@ -70,7 +71,7 @@ int main() {
 
     std::cout << "Recommendations for user:" << std::endl;
     for (auto &content : recommendations) {
-        std::cout << content.title << std::endl;
+        std::cout << content.title << " (Actor: " << content.actor << ")" << std::endl;
     }
 
     return 0;
